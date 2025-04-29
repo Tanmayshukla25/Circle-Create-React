@@ -14,7 +14,7 @@ function App() {
            const obj={
                id:Date.now(),
               x: e.clientX -9,
-              y: e.clientY -28,
+              y: e.clientY -56,
               backgroundColor:colors[Math.floor(Math.random()*colors.length)],
             };
             setCircle([...circle,obj]);
@@ -46,7 +46,7 @@ function App() {
   }
 
   useEffect(() => {
-    const handleKeyDown = (e) => {
+    function handleKeyDown (e){
       if (e.ctrlKey && e.key === 'z') {
         e.preventDefault();
         UndoCircle();
@@ -66,9 +66,9 @@ function App() {
     <>
 
     <div className='buttons'>
-      <button onClick={UndoCircle}>Undo</button>
-      <button onClick={RedoCircle}>Redo</button>
-      <button onClick={resetCircle}>Reset</button>
+      <button id="btn"onClick={UndoCircle}>Undo</button>
+      <button id="btn"onClick={RedoCircle}>Redo</button>
+      <button id="btn"onClick={resetCircle}>Reset</button>
 
     </div>
     <div className='CircleDiv' onClick={handelCircle}>
