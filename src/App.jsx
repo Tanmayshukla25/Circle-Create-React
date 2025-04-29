@@ -62,13 +62,16 @@ function App() {
       window.removeEventListener('keydown', handleKeyDown);
     };
   }, [circle, undo]);
+
+
+  
   return (
     <>
 
     <div className='buttons'>
-      <button id="btn"onClick={UndoCircle}>Undo</button>
-      <button id="btn"onClick={RedoCircle}>Redo</button>
-      <button id="btn"onClick={resetCircle}>Reset</button>
+      <button disabled={!circle.length} id="btn"onClick={UndoCircle}>Undo</button>
+      <button disabled={!undo.length} id="btn"onClick={RedoCircle}>Redo</button>
+      <button disabled={!circle.length} id="btn"onClick={resetCircle}>Reset</button>
 
     </div>
     <div className='CircleDiv' onClick={handelCircle}>
